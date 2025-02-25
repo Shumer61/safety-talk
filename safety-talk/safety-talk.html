@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Construction Safety Talk Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #3498db;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        textarea {
+            height: 80px;
+        }
+        .checkbox-group {
+            margin-bottom: 15px;
+        }
+        .checkbox-item {
+            margin-bottom: 5px;
+        }
+        .attendee-row {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .attendee-row input {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .attendee-row button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .action-buttons {
+            margin-top: 30px;
+            text-align: center;
+        }
+        @media print {
+            body {
+                background-color: white;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+            button, .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Road Construction Safety Talk Form</h1>
+        
+        <div class="section">
+            <h2>Introduction</h2>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+            
+            <label for="project">Project:</label>
+            <input type="text" id="project" name="project">
+            
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location">
+            
+            <label for="facilitator">Facilitator (Name & Position):</label>
+            <input type="text" id="facilitator" name="facilitator">
+            
+            <label for="weather">Weather Conditions:</label>
+            <input type="text" id="weather" name="weather">
+        </div>
+        
+        <div class="section">
+            <h2>Safety Statistics & Reminders</h2>
+            <label for="days-since">Days since last incident:</label>
+            <input type="number" id="days-since" name="days-since" min="0">
+            
+            <label for="recent-incidents">Recent incidents to review:</label>
+            <textarea id="recent-incidents" name="recent-incidents"></textarea>
+            
+            <label for="safety-focus">Current safety focus:</label>
+            <input type="text" id="safety-focus" name="safety-focus">
+        </div>
+        
+        <div class="section">
+            <h2>Site-Specific Hazards</h2>
+            <label for="traffic-conditions">Traffic conditions:</label>
+            <textarea id="traffic-conditions" name="traffic-conditions"></textarea>
+            
+            <label for="environmental-factors">Environmental factors:</label>
+            <textarea id="environmental-factors" name="environmental-factors"></textarea>
+            
+            <label for="adjacent-operations">Adjacent operations:</label>
+            <textarea id="adjacent-operations" name="adjacent-operations"></textarea>
+            
+            <label for="underground-utilities">Underground utilities:</label>
+            <textarea id="underground-utilities" name="underground-utilities"></textarea>
+        </div>
+        
+        <div class="section">
+            <h2>Today's Work Plan</h2>
+            <label for="tasks">Tasks to be performed:</label>
+            <textarea id="tasks" name="tasks"></textarea>
+            
+            <label for="equipment">Equipment to be used:</label>
+            <textarea id="equipment" name="equipment"></textarea>
+            
+            <label for="work-zones">Work zones established:</label>
+            <textarea id="work-zones" name="work-zones"></textarea>
+            
+            <label for="traffic-control-plan">Traffic control plan:</label>
+            <textarea id="traffic-control-plan" name="traffic-control-plan"></textarea>
+        </div>
+        
+        <div class="section">
+            <h2>Required PPE (Personal Protective Equipment)</h2>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="ppe-hiviz" name="ppe-hiviz">
+                    <label for="ppe-hiviz" style="display:inline">High-visibility clothing (Class 2 or 3)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="ppe-hardhat" name="ppe-hardhat">
+                    <label for="ppe-hardhat" style="display:inline">Hard hats</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="ppe-footwear" name="ppe-footwear">
+                    <label for="ppe-footwear" style="display:inline">Safety footwear</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="ppe-gloves" name="ppe-gloves">
+                    <label for="ppe-gloves" style="display:inline">Gloves appropriate for tasks</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="ppe-eye" name="ppe-eye">
+                    <label for="ppe-eye" style="display:inline">Eye protection</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="ppe-hearing" name="ppe-hearing">
+                    <label for="ppe-hearing" style="display:inline">Hearing protection (when necessary)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="ppe-respiratory" name="ppe-respiratory">
+                    <label for="ppe-respiratory" style="display:inline">Respiratory protection (if applicable)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="ppe-fall" name="ppe-fall">
+                    <label for="ppe-fall" style="display:inline">Fall protection (if working at heights)</label>
+                </div>
+            </div>
+            
+            <label for="additional-ppe">Additional PPE:</label>
+            <input type="text" id="additional-ppe" name="additional-ppe">
+        </div>
+        
+        <div class="section">
+            <h2>Communication Protocols</h2>
+            <label for="emergency-contact">Emergency contact:</label>
+            <input type="text" id="emergency-contact" name="emergency-contact">
+            
+            <label for="supervisor-contact">Supervisor contact:</label>
+            <input type="text" id="supervisor-contact" name="supervisor-contact">
+            
+            <label for="radio-channel">Radio channel:</label>
+            <input type="text" id="radio-channel" name="radio-channel">
+            
+            <label for="hand-signals">Hand signals review:</label>
+            <select id="hand-signals" name="hand-signals">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+            <div id="hand-signals-details" style="display:none;">
+                <label for="hand-signals-desc">Describe hand signals:</label>
+                <textarea id="hand-signals-desc" name="hand-signals-desc"></textarea>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Traffic Control Measures</h2>
+            <label for="signage">Signage in place:</label>
+            <textarea id="signage" name="signage"></textarea>
+            
+            <label for="flaggers">Flaggers positioned at:</label>
+            <textarea id="flaggers" name="flaggers"></textarea>
+            
+            <label for="barriers">Temporary barriers:</label>
+            <textarea id="barriers" name="barriers"></textarea>
+            
+            <label for="detours">Detour routes:</label>
+            <textarea id="detours" name="detours"></textarea>
+            
+            <label for="speed-reduction">Speed reduction measures:</label>
+            <textarea id="speed-reduction" name="speed-reduction"></textarea>
+        </div>
+        
+        <div class="section">
+            <h2>Emergency Procedures</h2>
+            <label for="muster-point">Muster point location:</label>
+            <input type="text" id="muster-point" name="muster-point">
+            
+            <label for="first-aid">First aid kit location:</label>
+            <input type="text" id="first-aid" name="first-aid">
+            
+            <label for="emergency-services">Nearest emergency services:</label>
+            <textarea id="emergency-services" name="emergency-services"></textarea>
+            
+            <label for="evacuation-route">Evacuation route:</label>
+            <textarea id="evacuation-route" name="evacuation-route"></textarea>
+            
+            <label for="vehicle-incursion">In case of vehicle incursion:</label>
+            <textarea id="vehicle-incursion" name="vehicle-incursion"></textarea>
+        </div>
+        
+        <div class="section">
+            <h2>Weather Contingencies</h2>
+            <label for="weather-protocol">Protocol for weather conditions:</label>
+            <textarea id="weather-protocol" name="weather-protocol"></textarea>
+            
+            <label for="shutdown-criteria">Shutdown criteria:</label>
+            <textarea id="shutdown-criteria" name="shutdown-criteria"></textarea>
+        </div>
+        
+        <div class="section">
+            <h2>Public Interface Considerations</h2>
+            <label for="pedestrian">Pedestrian accommodations:</label>
+            <textarea id="pedestrian" name="pedestrian"></textarea>
+            
+            <label for="business-access">Business access plans:</label>
+            <textarea id="business-access" name="business-access"></textarea>
+            
+            <label for="public-notification">Public notification status:</label>
+            <textarea id="public-notification" name="public-notification"></textarea>
+        </div>
+        
+        <div class="section">
+            <h2>Specific Safety Reminders</h2>
+            <p>Standard reminders (always included):</p>
+            <ul>
+                <li>Never turn your back to traffic</li>
+                <li>Maintain escape routes at all times</li>
+                <li>Stay within designated work zones</li>
+                <li>Report near misses immediately</li>
+                <li>Stay hydrated and watch for heat stress</li>
+                <li>Maintain constant communication with team members</li>
+            </ul>
+            
+            <label for="additional-reminders">Additional reminders:</label>
+            <textarea id="additional-reminders" name="additional-reminders"></textarea>
+        </div>
+        
+        <div class="section">
+            <h2>Questions and Concerns</h2>
+            <label for="worker-questions">Worker questions:</label>
+            <textarea id="worker-questions" name="worker-questions"></textarea>
+            
+            <label for="safety-suggestions">Safety suggestions:</label>
+            <textarea id="safety-suggestions" name="safety-suggestions"></textarea>
+        </div>
+        
+        <div class="section">
+            <h2>Attendance Record</h2>
+            <div id="attendees-container">
+                <div class="attendee-row">
+                    <input type="text" placeholder="Name" class="attendee-name">
+                    <input type="text" placeholder="Signature" class="attendee-signature">
+                    <button type="button" class="remove-attendee">Remove</button>
+                </div>
+            </div>
+            <button type="button" id="add-attendee" class="no-print">Add Attendee</button>
+        </div>
+        
+        <div class="section">
+            <h2>Follow-up Items</h2>
+            <textarea id="follow-up" name="follow-up"></textarea>
+        </div>
+        
+        <div class="section">
+            <label for="completed-by">Completed by:</label>
+            <input type="text" id="completed-by" name="completed-by">
+            
+            <label for="completion-date">Date:</label>
+            <input type="date" id="completion-date" name="completion-date">
+        </div>
+        
+        <div class="action-buttons no-print">
+            <button type="button" id="save-btn">Save as PDF</button>
+            <button type="button" id="reset-btn">Reset Form</button>
+        </div>
+    </div>
+
+    <script>
+        // Set today's date as default
+        document.getElementById('date').valueAsDate = new Date();
+        document.getElementById('completion-date').valueAsDate = new Date();
+        
+        // Hand signals toggle
+        document.getElementById('hand-signals').addEventListener('change', function() {
+            if (this.value === 'yes') {
+                document.getElementById('hand-signals-details').style.display = 'block';
+            } else {
+                document.getElementById('hand-signals-details').style.display = 'none';
+            }
+        });
+        
+        // Add attendee
+        document.getElementById('add-attendee').addEventListener('click', function() {
+            const container = document.getElementById('attendees-container');
+            const newRow = document.createElement('div');
+            newRow.className = 'attendee-row';
+            newRow.innerHTML = `
+                <input type="text" placeholder="Name" class="attendee-name">
+                <input type="text" placeholder="Signature" class="attendee-signature">
+                <button type="button" class="remove-attendee">Remove</button>
+            `;
+            container.appendChild(newRow);
+            
+            // Add event listener to the new remove button
+            newRow.querySelector('.remove-attendee').addEventListener('click', function() {
+                container.removeChild(newRow);
+            });
+        });
+        
+        // Remove attendee (initial row)
+        document.querySelector('.remove-attendee').addEventListener('click', function() {
+            const row = this.parentElement;
+            if (document.querySelectorAll('.attendee-row').length > 1) {
+                row.parentElement.removeChild(row);
+            } else {
+                alert('You must have at least one attendee row.');
+            }
+        });
+        
+        // Save as PDF
+        document.getElementById('save-btn').addEventListener('click', function() {
+            window.print();
+        });
+        
+        // Reset form
+        document.getElementById('reset-btn').addEventListener('click', function() {
+            if (confirm('Are you sure you want to reset the form? All entered data will be lost.')) {
+                location.reload();
+            }
+        });
+    </script>
+</body>
+</html>
